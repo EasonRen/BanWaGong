@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -19,6 +21,8 @@ import retrofit2.Response;
 import win.nicecode.banwagong.R;
 import win.nicecode.banwagong.api.DataManager;
 import win.nicecode.banwagong.bean.LiveServiceInfo;
+import win.nicecode.banwagong.bean.VpsInfoData;
+import win.nicecode.banwagong.db.VpsInfoDb;
 
 public class MainActivity extends AppCompatActivity {
     private String veid = "379833";
@@ -70,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
         fTransaction = fManager.beginTransaction();
         fTransaction.add(R.id.ly_frame, fg1).commit();
         //bindData();
+
+        VpsInfoDb vpsInfoDb = new VpsInfoDb(this);
+
+        List<VpsInfoData> ls=vpsInfoDb.query("");
     }
 
     @OnClick({R.id.ly_tab_menu_home, R.id.ly_tab_menu_like, R.id.ly_tab_menu_message, R.id.ly_tab_menu_person})
