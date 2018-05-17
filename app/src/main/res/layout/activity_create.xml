@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Veid" />
+        android:text="@string/veid" />
 
     <EditText
         android:id="@+id/etVeid"
@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ApiKey" />
+        android:text="@string/apikey" />
 
     <EditText
         android:id="@+id/etApiKey"
@@ -33,10 +33,10 @@
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ADD"/>
+        android:text="@string/add"/>
     <Button
         android:id="@+id/btnCancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CANCEL"/>
+        android:text="@string/cancel"/>
 </LinearLayout>
