@@ -67,7 +67,7 @@ public class VpsListAdapter extends RecyclerView.Adapter<VpsListAdapter.ViewHold
         }
 
         @OnLongClick()
-        public boolean onLongClick(View v){
+        public boolean onLongClick(View v) {
             Toast.makeText(mcontext, "OnLongClick", Toast.LENGTH_SHORT).show();
             return true;
         }
@@ -92,11 +92,10 @@ public class VpsListAdapter extends RecyclerView.Adapter<VpsListAdapter.ViewHold
     @Override
     public VpsListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                         int viewType) {
-        // create a new view
-        View v = LayoutInflater.from(parent.getContext())
+        View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.vps_view, parent, false);
 
-        ViewHolder vh = new ViewHolder(v, parent.getContext());
+        ViewHolder vh = new ViewHolder(view, parent.getContext());
         return vh;
     }
 

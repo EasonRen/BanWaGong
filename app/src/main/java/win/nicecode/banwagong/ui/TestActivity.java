@@ -23,5 +23,6 @@ public class TestActivity extends AppCompatActivity {
     @OnClick(R.id.button2)
     public void jumpActivity(){
         startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }

@@ -1,6 +1,8 @@
 package win.nicecode.banwagong.ui;
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,6 +28,7 @@ import win.nicecode.banwagong.bean.VpsInfoData;
 import win.nicecode.banwagong.db.VpsInfoDb;
 
 public class VpsListFragment extends Fragment {
+    private Context mContext;
     private View rootView;
     private VpsInfoDb vpsInfoDb;
     private String veid = "379833";
@@ -118,10 +121,22 @@ public class VpsListFragment extends Fragment {
 
                     @Override
                     public void onFailure(Call<LiveServiceInfo> c, Throwable t) {
-                        Toast toast = Toast.makeText(getActivity(), "Bad request", 2 * 1000);
-                        toast.show();
+                        Toast.makeText(mContext, "request error", Toast.LENGTH_SHORT).show();
+                        //Log.i("VpsListFragment", "Bad request");
                     }
                 });
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mContext = activity;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mContext = null;
     }
 
     @Override
