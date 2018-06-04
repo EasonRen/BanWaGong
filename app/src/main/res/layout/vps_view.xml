@@ -10,6 +10,7 @@
         android:id="@+id/osImg"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:padding="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/pic"
         android:src="@mipmap/icon_linux" />
