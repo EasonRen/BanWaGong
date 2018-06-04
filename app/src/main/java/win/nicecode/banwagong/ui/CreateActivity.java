@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -34,11 +35,12 @@ public class CreateActivity extends AppCompatActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnAdd:
-
+                Log.d("edit",etVeid.getText().toString());
+                Log.d("edit",etApiKey.getText().toString());
                 break;
             case R.id.btnCancel:
-                finish();
                 startActivity(new Intent(CreateActivity.this, MainActivity.class));
+                finish();
                 break;
         }
     }
